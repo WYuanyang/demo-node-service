@@ -8,7 +8,7 @@ const http = require("http");
 const server = http.createServer(app);
 // 手动添加 CORS 头
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://demo.jsh5css.cn");
   res.header("Access-Control-Allow-Methods", "GET, POST");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   // 处理 OPTIONS 请求
