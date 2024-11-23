@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# SSL证书文件
+*.key
+*.crt
+*.pem
+*.cert
+
+# IDE/编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 日志文件
+logs/
+*.log
+
+# 构建输出
+dist/
+build/
+out/
+
+# 临时文件
+.tmp/
+temp/
+
+# 系统文件
+.DS_Store
+Thumbs.db 
+
+# 敏感文件
+server/config/database.js
+server/config/wechat.js

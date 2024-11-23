@@ -1,0 +1,294 @@
+.card-page {
+    background: linear-gradient(45deg, #fad0c4 0%, #b5c1ff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    height: 100%;
+    position: relative;
+}
+
+.card-container {
+    width: 80%;
+    max-width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* 卡片正面样式 */
+.card-front {
+    background: linear-gradient(45deg, #ffcad4 0%, #b5c1ff 100%);
+}
+
+.card-front .card-title {
+    font-size: 2.4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-front .card-hint {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 卡片背面样式 */
+.card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #fad0c4 0%, #f3e7e9 100%);
+    padding: 2rem;
+}
+
+.card-back .card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* 打字机效果容器 */
+.card-back .text-line {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    visibility: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #ff758c;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    opacity: 0;
+    width: 0;
+}
+
+/* 翻转后显示打字效果 */
+.card-container.flipped .text-line {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 为每行设置不同的延迟 */
+.card-container.flipped .text-line:nth-child(1) { 
+    animation: cardTyping 1.5s steps(20) forwards 0.5s;
+}
+.card-container.flipped .text-line:nth-child(2) { 
+    animation: cardTyping 1.5s steps(20) forwards 2s;
+}
+.card-container.flipped .text-line:nth-child(3) { 
+    animation: cardTyping 1.5s steps(20) forwards 3.5s;
+}
+.card-container.flipped .text-line:nth-child(4) { 
+    animation: cardTyping 1.5s steps(20) forwards 5s;
+}
+.card-container.flipped .text-line:nth-child(5) { 
+    animation: cardTyping 1.5s steps(20) forwards 6.5s;
+}
+.card-container.flipped .text-line:nth-child(6) { 
+    animation: cardTyping 1.5s steps(20) forwards 8s;
+}
+.card-container.flipped .text-line:nth-child(7) { 
+    animation: cardTyping 1.5s steps(20) forwards 9.5s;
+}
+.card-container.flipped .text-line:nth-child(8) { 
+    animation: cardTyping 1.5s steps(20) forwards 11s;
+}
+
+/* 打字机光标 */
+.text-line::after {
+    content: '|';
+    position: absolute;
+    right: -4px;
+    top: 0;
+    color: #ff758c;
+    opacity: 0;
+    animation: cursor 0.8s infinite;
+}
+
+.card-container.flipped .text-line.typing::after {
+    opacity: 1;
+}
+
+/* 装饰效果 */
+.card-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.card-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes cardTyping {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 1;
+    }
+}
+
+/* 卡片背面装饰 */
+.card-back-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* 漂浮的爱心 */
+.floating-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    animation: floatingElement 6s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+.floating-heart svg {
+    width: 100%;
+    height: 100%;
+    fill: rgba(255, 182, 193, 0.3);
+}
+
+/* 漂浮的星星 */
+.floating-star {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid rgba(255, 223, 186, 0.3);
+    animation: floatingElement 8s ease-in-out infinite;
+    animation-delay: var(--delay);
+    transform-origin: center;
+}
+
+.floating-star::after {
+    content: '';
+    position: absolute;
+    top: 5.3px;
+    left: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 16px solid rgba(255, 223, 186, 0.3);
+}
+
+/* 漂浮的圆圈 */
+.floating-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(173, 216, 230, 0.3);
+    border-radius: 50%;
+    animation: floatingElement 7s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes floatingElement {
+    0% {
+        transform: translate(0, 100%) scale(0.3) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+        transform: translate(-20px, 50%) scale(0.6) rotate(90deg);
+    }
+    50% {
+        transform: translate(20px, 0) scale(1) rotate(180deg);
+    }
+    80% {
+        opacity: 0.8;
+        transform: translate(-10px, -50%) scale(0.6) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, -100%) scale(0.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 确保装饰元素在文字下层 */
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* 气球动画容器 */
+.balloon-animation {
+    position: absolute;
+    top: 9vh;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.balloon-animation dotlottie-player {
+    width: 100%;
+    height: 100%;}
+  

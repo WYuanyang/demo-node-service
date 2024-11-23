@@ -1,0 +1,115 @@
+.gift-page {
+    background: linear-gradient(45deg, #fad0c4 0%, #b5c1ff 100%);
+    height: 100%;
+    position: relative;
+}
+
+.gift-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.gift-box {
+    width: 90%;
+    max-width: 800px;
+    background: linear-gradient(45deg, #ffcad4 0%, #b5c1ff 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    animation: cardEnter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gift-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.gift-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.gift-message {
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.8;
+    text-align: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.gift-box dotlottie-player {
+    margin: 2rem auto;
+    visibility: hidden;
+}
+
+/* 每行文字的样式 */
+.message-line {
+    opacity: 0;
+    transform: translateY(20px);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* 为每行文字添加动画，增加动画时长和间隔 */
+.message-line:nth-child(1) { animation: floatIn 1.2s ease forwards 0.5s; }
+.message-line:nth-child(2) { animation: floatIn 1.2s ease forwards 1.2s; }
+.message-line:nth-child(3) { animation: floatIn 1.2s ease forwards 1.9s; }
+.message-line:nth-child(4) { animation: floatIn 1.2s ease forwards 2.6s; }
+.message-line:nth-child(5) { animation: floatIn 1.2s ease forwards 3.3s; }
+.message-line:nth-child(6) { animation: floatIn 1.2s ease forwards 4s; }
+.message-line:nth-child(7) { animation: floatIn 1.2s ease forwards 4.7s; }
+.message-line:nth-child(8) { animation: floatIn 1.2s ease forwards 5.4s; }
+
+
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .gift-box {
+        padding: 2rem;
+    }
+
+    .gift-title {
+        font-size: 2rem;
+    }
+
+    .gift-message {
+        font-size: 1.4rem;
+    }
+} 

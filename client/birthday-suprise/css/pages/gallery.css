@@ -1,0 +1,95 @@
+.gallery-page {
+    background: linear-gradient(135deg, #fad0c4 0%, #b5c1ff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.gallery-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+/* 主图容器 */
+.main-photo-container {
+    width: 100%;
+    height: 62vh;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 小图容器 */
+.thumb-photos-container {
+    width: 100%;
+    height: 28vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* 图片项样式 */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* 只在初始加载时使用入场动画的类 */
+.gallery-item.init-animate {
+    transform: translateY(50px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 标题样式 */
+.photo-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* 加载动画 */
+.gallery-item.loading {
+    animation: shimmer 1.5s infinite linear;
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.1) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.1) 100%
+    );
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+} 
