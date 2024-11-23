@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const wechatService = require("./utils/wechatService");
 // const cors = require('cors');
-const PORT = 1023;
+const PORT = 8888;
 const http = require("http");
 const server = http.createServer(app);
 // 手动添加 CORS 头

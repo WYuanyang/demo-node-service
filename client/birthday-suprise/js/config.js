@@ -1,7 +1,7 @@
 const CONFIG = {
   // 生日日期配置
   BIRTHDAY: {
-    date: "2024-11-23 12:00:00", // 生日日期
+    date: "2024-11-23 00:00:00", // 生日日期
     format: "YYYY-MM-DD HH:mm:ss", // 日期格式
   },
 
@@ -22,10 +22,7 @@ const CONFIG = {
   // 欢迎页文字配置
   WELCOME_TEXT: {
     title: "亲爱的老婆",
-    subtitle: [
-      "今天是你的生日",
-      "让我们一起开启这段浪漫旅程",
-    ],
+    subtitle: ["今天是你的生日", "让我们一起开启这段浪漫旅程"],
   },
 
   // 游戏配置
@@ -68,23 +65,23 @@ const CONFIG = {
   GALLERY_IMAGES: [
     {
       url: "assets/images/1.jpg",
-      title: "第一次国外旅行",
+      title: "我们的第一张合照",
     },
     {
       url: "assets/images/2.jpg",
-      title: "一起出门逛街",
+      title: "一起看的第一场电影",
     },
     {
       url: "assets/images/3.jpg",
-      title: "云南大理之行",
+      title: "第一次旅行",
     },
     {
       url: "assets/images/4.jpg",
-      title: "最难忘的30岁生日",
+      title: "最难忘的生日",
     },
     {
       url: "assets/images/5.jpg",
-      title: "成为伟大的妈妈",
+      title: "最浪漫的时刻",
     },
   ],
   // 最后的感谢
