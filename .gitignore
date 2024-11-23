@@ -35,5 +35,5 @@ temp/
 Thumbs.db 
 
 # 敏感文件
-server/config/database.js
-server/config/wechat.js
+# server/config/database.js
+# server/config/wechat.js
