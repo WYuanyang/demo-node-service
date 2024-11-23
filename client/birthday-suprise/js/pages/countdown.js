@@ -136,6 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 按钮点击事件
     const enterBtn = document.querySelector('.enter-btn');
     enterBtn.addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href = '/birthday/suprise';
     });
 }); 

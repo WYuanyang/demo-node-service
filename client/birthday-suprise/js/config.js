@@ -29,9 +29,9 @@ const CONFIG = {
   GAME_QUESTIONS: [
     {
       question: "我们第一次见面是在哪里？",
-      options: ["二七塔", "公园", "图书馆", "电影院"],
+      options: ["咖啡厅", "公园", "图书馆", "电影院"],
       correctIndex: 0,
-      feedback: "对啦！那天的天空真的很美，就像你一样～",
+      feedback: "没错！那天的咖啡香依然记忆犹新～",
       reward: "520",
     },
     {
@@ -43,9 +43,9 @@ const CONFIG = {
     },
     {
       question: "我们的第一次约会去了哪里？",
-      options: ["游乐园", "咖啡厅", "动物园", "植物园"],
+      options: ["游乐园", "海边", "动物园", "植物园"],
       correctIndex: 1,
-      feedback: "没错！那天的咖啡香依然记忆犹新～",
+      feedback: "对啦！那天的夕阳真的很美，就像你一样～",
       reward: "888",
     },
   ],

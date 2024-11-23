@@ -34,8 +34,8 @@ const CLIENT_DIR = path.join(__dirname, "..", "client");
 // 路由配置
 const routes = {
   "/": "index.html",
-  "/love": "birthday-suprise/countdown.html",
-  "/love/index": "birthday-suprise/index.html",
+  "/birthday/": "birthday-suprise/index.html",
+  "/birthday/suprise": "birthday-suprise/main.html",
 };
 
 // 先注册具体路由
@@ -47,10 +47,8 @@ Object.entries(routes).forEach(([route, filePath]) => {
 
 // 然后配置静态文件服务
 app.use(
-  "/love",
-  express.static(path.join(CLIENT_DIR, "birthday-suprise"), {
-    index: false, // 禁用默认的 index.html 处理
-  })
+  "/birthday",
+  express.static(path.join(CLIENT_DIR, "birthday-suprise"))
 );
 
 // 主静态文件服务

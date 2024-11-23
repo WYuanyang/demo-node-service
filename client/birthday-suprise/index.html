@@ -2,214 +2,53 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>生日惊喜</title>
-    
-    <!-- CDN引入 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
-    
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- 样式文件 -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/pages/welcome.css">
-    <link rel="stylesheet" href="css/pages/card.css">
-    <link rel="stylesheet" href="css/pages/gallery.css">
-    <link rel="stylesheet" href="css/pages/game.css">
-    <link rel="stylesheet" href="css/pages/gift.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日倒计时</title>
+    <link rel="stylesheet" href="css/pages/countdown.css">
 </head>
 <body>
-    <!-- 页面容器 -->
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <!-- 欢迎页 -->
-            <div class="swiper-slide welcome-page" data-anchor="welcome">
-                <!-- 装饰元素容器 -->
-                <div class="welcome-decorations">
-                    <div class="decoration-item heart-1">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                    <div class="decoration-item heart-2">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                        </svg>
-                    </div>
-                    <div class="decoration-item star-1"></div>
-                    <div class="decoration-item star-2"></div>
-                    <div class="decoration-item dot-1"></div>
-                    <div class="decoration-item dot-2"></div>
-                </div>
-                <div class="welcome-animation">
-                    <dotlottie-player
-                        src="assets/lottie/welcome.lottie"
-                        background="transparent"
-                        speed="1"
-                        loop
-                        autoplay
-                    ></dotlottie-player>
-                </div>
-                <div class="welcome-text">
-                    <!-- 文字内容将由 JavaScript 动态生成 -->
-                </div>
-                <div class="scroll-hint"></div>
-            </div>
-
-            <!-- 卡片页 -->
-            <div class="swiper-slide card-page" data-anchor="card">
-            </div>
-
-            <!-- 图库页 -->
-            <div class="swiper-slide gallery-page" data-anchor="gallery">
-                <div class="gallery-container"></div>
-                <div class="scroll-hint"></div>
-            </div>
-
-            <!-- 游戏页 -->
-            <div class="swiper-slide game-page" data-anchor="game">
-                <div class="game-container">
-                    <!-- 添加装饰容器 -->
-                    <div class="game-decorations">
-                        <!-- 爱心装饰 -->
-                        <div class="floating-heart" style="top: 15%; left: 10%; animation-delay: 0s;">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <div class="floating-heart" style="top: 75%; left: 85%; animation-delay: 2s;">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <div class="floating-heart" style="top: 35%; right: 15%; animation-delay: 4s;">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        
-                        <!-- 星星装饰 -->
-                        <div class="floating-star" style="top: 25%; right: 15%; animation-delay: 1s;"></div>
-                        <div class="floating-star" style="top: 65%; left: 20%; animation-delay: 3s;"></div>
-                        <div class="floating-star" style="top: 40%; right: 30%; animation-delay: 5s;"></div>
-                        <div class="floating-star" style="top: 85%; right: 25%; animation-delay: 2s;"></div>
-                        <div class="floating-star" style="top: 15%; left: 35%; animation-delay: 4s;"></div>
-                        
-                        <!-- 圆点装饰 -->
-                        <div class="floating-circle" style="top: 45%; left: 15%; animation-delay: 0.5s;"></div>
-                        <div class="floating-circle" style="top: 35%; right: 25%; animation-delay: 1.5s;"></div>
-                        <div class="floating-circle" style="top: 85%; right: 45%; animation-delay: 2.5s;"></div>
-                        <div class="floating-circle" style="top: 25%; left: 40%; animation-delay: 3.5s;"></div>
-                        <div class="floating-circle" style="top: 70%; left: 30%; animation-delay: 4.5s;"></div>
-                        
-                        <!-- 添加闪烁的星星 -->
-                        <div class="twinkling-star" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
-                        <div class="twinkling-star" style="top: 60%; right: 20%; animation-delay: 1s;"></div>
-                        <div class="twinkling-star" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
-                        <div class="twinkling-star" style="top: 80%; left: 40%; animation-delay: 3s;"></div>
-                    </div>
-                    
-                    <!-- 原有内容 -->
-                    <div class="game-content">
-                        <div class="question-container">
-                            <div class="question-header">
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-                                <div class="question-counter">
-                                    <span class="question-label">爱的记忆碎片</span>
-                                    <span class="current">1</span><span class="total">/3</span>
-                                </div>
-                            </div>
-                            
-                            <div class="question-text"></div>
-                            <div class="options-container">
-                                <!-- 选项将通过JavaScript动态生成 -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="feedback-container">
-                        <dotlottie-player
-                            class="feedback-animation"
-                            background="transparent"
-                            speed="1"
-                            autoplay
-                        ></dotlottie-player>
-                        <div class="feedback-text"></div>
-                    </div>
-                </div>
-                <div class="scroll-hint"></div>
-            </div>
-
-            <!-- 礼物页 -->
-            <div class="swiper-slide gift-page" data-anchor="gift">
-                <div class="gift-container">
-                    <!-- 装饰元素 -->
-                    <div class="gift-decorations">
-                        <!-- 与游戏页面相同的装饰元素 -->
-                        <div class="floating-heart" style="top: 15%; left: 10%; animation-delay: 0s;">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <!-- ... 添加更多装饰元素 ... -->
-                    </div>
-
-                    <!-- 最后的感谢 -->
-                    <div class="gift-content">
-                        <div class="gift-box">
-                            <div class="gift-header">
-                                <h2 class="gift-title">最后的心语</h2>
-                            </div>
-                            <div class="gift-message">
-                                <!-- 礼物信息将通过JavaScript动态生成 -->
-                            </div>
-                            <dotlottie-player
-                                src="assets/lottie/kiss.lottie"
-                                background="transparent"
-                                speed="1"
-                                style="width: 200px; height: 200px;"
-                                loop
-                            ></dotlottie-player>
-                        </div>
-                    </div>
-                </div>
+    <div class="countdown-container">
+        <!-- 装饰元素 -->
+        <div class="decorations">
+            <div class="stars"></div>
+            <div class="clouds">
+                <svg class="cloud cloud-1" viewBox="0 0 100 100">
+                    <path d="M25,60 Q30,45 45,45 Q55,45 60,55 Q70,45 80,50 Q90,55 85,65 Q95,70 90,80 Q85,85 75,80 Q65,85 55,80 Q45,85 35,80 Q25,85 20,75 Q15,65 25,60" />
+                </svg>
+                <!-- <svg class="cloud cloud-2" viewBox="0 0 100 100">
+                    <path d="M25,60 Q30,45 45,45 Q55,45 60,55 Q70,45 80,50 Q90,55 85,65 Q95,70 90,80 Q85,85 75,80 Q65,85 55,80 Q45,85 35,80 Q25,85 20,75 Q15,65 25,60" />
+                </svg>
+                <svg class="cloud cloud-3" viewBox="0 0 100 100">
+                    <path d="M25,60 Q30,45 45,45 Q55,45 60,55 Q70,45 80,50 Q90,55 85,65 Q95,70 90,80 Q85,85 75,80 Q65,85 55,80 Q45,85 35,80 Q25,85 20,75 Q15,65 25,60" />
+                </svg> -->
             </div>
         </div>
-    </div>
 
-    <!-- 音频元素 -->
-    <audio id="bgMusic" loop>
-        <source src="assets/audio/background.mp3" type="audio/mpeg">
-    </audio>
+        <!-- 主要内容 -->
+        <div class="content">
+            <h1 class="title">距离生日还有</h1>
+            
+            <div class="countdown">
+                <div class="time-block">
+                    <div class="time hours">00</div>
+                    <div class="label">小时</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-block">
+                    <div class="time minutes">00</div>
+                    <div class="label">分钟</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-block">
+                    <div class="time seconds">00</div>
+                    <div class="label">秒</div>
+                </div>
+            </div>
 
-    <!-- 加载动画 -->
-    <div class="loading-overlay">
-        <!-- 气泡元素 -->
-        <div class="bubble bubble-1"></div>
-        <div class="bubble bubble-2"></div>
-        <div class="bubble bubble-3"></div>
-        <div class="bubble bubble-4"></div>
-        <div class="bubble bubble-5"></div>
-        
-        <dotlottie-player
-            src="assets/lottie/loading.lottie"
-            background="transparent"
-            speed="1"
-            style="width: 150px; height: 150px;"
-            loop
-            autoplay
-        ></dotlottie-player>
-        <div class="loading-text">正在准备你的生日惊喜...</div>
-        <div class="loading-progress">
-            <div class="loading-bar"></div>
+            <button class="enter-btn">进入生日页面</button>
         </div>
     </div>
-
-    <!-- 脚本文件 -->
     <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/pages/welcome.js"></script>
-    <script src="js/pages/card.js"></script>
-    <script src="js/pages/gallery.js"></script>
-    <script src="js/pages/game.js"></script>
-    <script src="js/pages/gift.js"></script>
+    <script src="js/pages/countdown.js"></script>
 </body>
 </html> 
